@@ -9,6 +9,8 @@ import 'package:text_qoute/constants/app_theme.dart';
 import 'package:text_qoute/constants/theme_cubit.dart';
 import 'domain/firebase_options.dart';
 
+// Github One
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
