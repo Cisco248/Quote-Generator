@@ -1,0 +1,52 @@
+name: text_qoute
+description: "A new Flutter project."
+publish_to: 'none'
+
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.6.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase_core:
+  cloud_firestore:
+  cupertino_icons:
+  dartz:
+  path_provider:
+  flutter_bloc:
+  hydrated_bloc:
+  provider: ^6.1.2
+  shared_preferences: ^2.5.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+# Flutter Import Modules and Assets
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets\images\logo\logo.png
+    - assets\images\logo\logo2.png
+    - assets\images\logo\text.png
+    - assets\Images\1.png
+    - assets\Images\2.png
+    - assets\Images\3.png
+    - assets\Images\4.png
+
+  # fonts:
+  #   - family: Schyler
+  #     fonts:
+  #       - asset: fonts/Schyler-Regular.ttf
+  #       - asset: fonts/Schyler-Italic.ttf
+  #         style: italic
+  #   - family: Trajan Pro
+  #     fonts:
+  #       - asset: fonts/TrajanPro.ttf
+  #       - asset: fonts/TrajanPro_Bold.ttf
+  #         weight: 700

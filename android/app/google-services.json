@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "596959164328",
+    "project_id": "bionic-store-303613",
+    "storage_bucket": "bionic-store-303613.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:596959164328:android:92eff6f16924d9a09f0f9d",
+        "android_client_info": {
+          "package_name": "com.example.text_qoute"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZ2PkW5et5Y-t8l8zTkLS3oKFj5HdAems"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
