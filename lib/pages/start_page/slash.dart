@@ -18,15 +18,13 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Image(image: AssetImage('assets/images/logo/logo2.png')),
-      ),
+      body: Center(child: Image.asset('assets/vectors/logo2.png')),
     );
   }
 
   Future<void> redirect() async {
     await Future.delayed(Durations.long2);
     Navigator.push(context,
-        MaterialPageRoute(builder: (BuildContext context) => Homescreen()));
+        MaterialPageRoute(builder: (BuildContext context) => HomeScreen()));
   }
 }

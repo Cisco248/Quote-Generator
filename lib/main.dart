@@ -37,7 +37,8 @@ class MyApp extends StatelessWidget {
             builder: (context, mode) => MaterialApp(
                   debugShowCheckedModeBanner: false,
                   initialRoute: '/',
-                  routes: AppRoutes.routes,
+                  routes: AppRoutes.routes.map((key, value) =>
+                      MapEntry(key.toString(), (context) => value(context))),
                   theme: AppTheme.lightTheme,
                   darkTheme: AppTheme.darkTheme,
                   themeMode: ThemeMode.system,

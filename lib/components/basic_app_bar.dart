@@ -15,15 +15,21 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.transparent,
+      backgroundColor:
+          context.isDarkMode ? QColors.darkContainer : QColors.lightContainer,
       elevation: 0,
       centerTitle: true,
-      title: Text(title),
+      title: Text(
+        title,
+        style: TextStyle(
+            fontSize: 20,
+            color: context.isDarkMode ? QColors.primary : QColors.dark),
+      ),
       leading: IconButton(
           onPressed: () {
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => Homescreen()),
+              MaterialPageRoute(builder: (context) => HomeScreen()),
             );
           },
           icon: Container(
@@ -41,12 +47,19 @@ class BasicAppBar extends StatelessWidget implements PreferredSizeWidget {
           )),
       actions: [
         IconButton(
+            style: ButtonStyle(
+                backgroundColor: WidgetStatePropertyAll(context.isDarkMode
+                    ? QColors.darkContainer
+                    : QColors.lightContainer)),
             onPressed: () {
-              context.read<ThemeCubit>().updateTheme(ThemeMode.light);
+              context.read<ThemeCubit>().updateTheme(ThemeMode.dark);
             },
             icon: context.isDarkMode
                 ? Icon(Icons.light_mode)
-                : Icon(Icons.dark_mode))
+                : Icon(
+                    Icons.dark_mode,
+                    color: context.isDarkMode ? QColors.primary : QColors.dark,
+                  ))
       ],
     );
   }

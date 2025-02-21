@@ -67,7 +67,11 @@ class GenerateScreenState extends State<GenerateScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               _isLoading
-                  ? const CircularProgressIndicator()
+                  ? CircularProgressIndicator(
+                      color: QColors.primary,
+                      backgroundColor:
+                          context.isDarkMode ? QColors.dark : QColors.light,
+                    )
                   : Column(
                       children: [
                         Text(
@@ -94,6 +98,8 @@ class GenerateScreenState extends State<GenerateScreen> {
                     ),
               const SizedBox(height: 20),
               ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: WidgetStatePropertyAll(QColors.primary)),
                 onPressed: _isLoading ? null : fetchRandomQuote,
                 child: Text(
                   "Generate Quote",

@@ -18,8 +18,10 @@ dependencies:
   path_provider:
   flutter_bloc:
   hydrated_bloc:
-  provider: ^6.1.2
-  shared_preferences: ^2.5.2
+  provider:
+  shared_preferences:
+  flutter_svg:
+
 
 dev_dependencies:
   flutter_test:
@@ -27,17 +29,16 @@ dev_dependencies:
   flutter_lints: ^5.0.0
 
 # Flutter Import Modules and Assets
-flutter:
-  uses-material-design: true
 
+flutter:
   assets:
-    - assets\images\logo\logo.png
-    - assets\images\logo\logo2.png
-    - assets\images\logo\text.png
-    - assets\Images\1.png
-    - assets\Images\2.png
-    - assets\Images\3.png
-    - assets\Images\4.png
+    - assets/vectors/logo.png
+    - assets/vectors/logo2.png
+    - assets/vectors/Logo.svg
+
+
+
+  uses-material-design: true
 
   # fonts:
   #   - family: Schyler

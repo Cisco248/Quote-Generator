@@ -6,14 +6,14 @@ class AppTheme {
     primaryColor: QColors.primary,
     appBarTheme: AppBarTheme(
         backgroundColor: QColors.light,
-        iconTheme: IconThemeData(color: QColors.iconPrimary, size: 24),
+        iconTheme: IconThemeData(color: QColors.primary, size: 24),
         titleTextStyle: TextStyle(color: QColors.dark)),
     scaffoldBackgroundColor: QColors.light,
     brightness: Brightness.light,
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: QColors.buttonBackground,
-            iconColor: QColors.iconPrimary,
+            backgroundColor: QColors.primary,
+            iconColor: QColors.primary,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10)))),
     floatingActionButtonTheme: FloatingActionButtonThemeData(
@@ -24,14 +24,14 @@ class AppTheme {
       primaryColor: QColors.primary,
       appBarTheme: AppBarTheme(
           backgroundColor: QColors.dark,
-          iconTheme: IconThemeData(color: QColors.iconPrimary, size: 24),
+          iconTheme: IconThemeData(color: QColors.primary, size: 24),
           titleTextStyle: TextStyle(color: QColors.light)),
       scaffoldBackgroundColor: QColors.dark,
       brightness: Brightness.dark,
       elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
-              backgroundColor: QColors.buttonBackground,
-              iconColor: QColors.iconPrimary,
+              backgroundColor: QColors.primary,
+              iconColor: QColors.primary,
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10)))),
       floatingActionButtonTheme: FloatingActionButtonThemeData(
