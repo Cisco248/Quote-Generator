@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
                       MapEntry(key.toString(), (context) => value(context))),
                   theme: AppTheme.lightTheme,
                   darkTheme: AppTheme.darkTheme,
-                  themeMode: ThemeMode.system,
+                  themeMode: mode,
                 )));
   }
 }

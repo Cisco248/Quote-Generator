@@ -85,7 +85,10 @@ class HomeScreenState extends State<HomeScreen> {
               padding: EdgeInsets.only(right: 20),
               child: IconButton(
                   onPressed: () {
-                    context.read<ThemeCubit>().updateTheme((ThemeMode.dark));
+                    final themeCubit = context.read<ThemeCubit>();
+                    themeCubit.updateTheme(themeCubit.state == ThemeMode.light
+                        ? ThemeMode.dark
+                        : ThemeMode.light);
                   },
                   icon: context.isDarkMode
                       ? Icon(Icons.light_mode)

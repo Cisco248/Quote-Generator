@@ -22,9 +22,8 @@ class GenerateScreenState extends State<GenerateScreen> {
     });
 
     try {
-      QuerySnapshot querySnapshot = await _firestore
-          .collection('Text Quote')
-          .get(); // Fix collection name
+      QuerySnapshot querySnapshot =
+          await _firestore.collection('Text Quote').get();
       if (querySnapshot.docs.isNotEmpty) {
         final randomIndex = Random().nextInt(querySnapshot.docs.length);
         final randomDoc = querySnapshot.docs[randomIndex];
