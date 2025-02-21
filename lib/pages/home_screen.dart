@@ -2,20 +2,19 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:text_qoute/constants/app_constant.dart';
-// import 'package:text_qoute/constants/app_theme.dart';
 import 'package:text_qoute/constants/theme_cubit.dart';
 import 'package:text_qoute/constants/theme_provider.dart';
 import 'package:text_qoute/pages/add_data.dart';
 import 'package:text_qoute/pages/generate_page.dart';
 
-class Homescreen extends StatefulWidget {
-  const Homescreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  _HomescreenState createState() => _HomescreenState();
+  HomeScreenState createState() => HomeScreenState();
 }
 
-class _HomescreenState extends State<Homescreen> {
+class HomeScreenState extends State<HomeScreen> {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   List<Map<String, dynamic>> recommendedQuotes = [];
@@ -69,24 +68,37 @@ class _HomescreenState extends State<Homescreen> {
       appBar: AppBar(
         backgroundColor:
             context.isDarkMode ? QColors.darkContainer : QColors.lightContainer,
-        leading: Image.asset('assets/images/logo/logo.png'),
+        leading: Padding(
+            padding: EdgeInsets.only(left: 20),
+            child: Image(
+              image: AssetImage('assets/vectors/logo.png'),
+            )),
         title: Text(
-          "Qouter",
+          "Quoter",
           style: TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.w800,
               color: context.isDarkMode ? QColors.light : QColors.dark),
         ),
         actions: [
-          IconButton(
-              onPressed: () {
-                context.read<ThemeCubit>().updateTheme((ThemeMode.light));
-              },
-              icon: context.isDarkMode
-                  ? Icon(Icons.light_mode)
-                  : Icon(Icons.dark_mode))
+          Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: IconButton(
+                  onPressed: () {
+                    context.read<ThemeCubit>().updateTheme((ThemeMode.dark));
+                  },
+                  icon: context.isDarkMode
+                      ? Icon(Icons.light_mode)
+                      : Icon(Icons.dark_mode)))
         ],
       ),
       body: isLoading
-          ? Center(child: CircularProgressIndicator())
+          ? Center(
+              child: CircularProgressIndicator(
+              color: QColors.primary,
+              backgroundColor:
+                  context.isDarkMode ? QColors.dark : QColors.light,
+            ))
           : SingleChildScrollView(
               child: Column(
                 children: [
@@ -134,7 +146,7 @@ class _HomescreenState extends State<Homescreen> {
             title,
             style: TextStyle(
                 fontSize: 16,
-                color: context.isDarkMode ? QColors.dark : QColors.light),
+                color: context.isDarkMode ? Colors.white : Colors.black),
           ),
           const SizedBox(height: 10),
           SizedBox(
@@ -150,7 +162,9 @@ class _HomescreenState extends State<Homescreen> {
                         child: Container(
                           padding: EdgeInsets.all(10),
                           decoration: BoxDecoration(
-                            color: QColors.darkContainer,
+                            color: context.isDarkMode
+                                ? QColors.darkContainer
+                                : QColors.lightContainer,
                             borderRadius: BorderRadius.circular(10),
                           ),
                           child: Column(
@@ -171,7 +185,9 @@ class _HomescreenState extends State<Homescreen> {
                                 style: TextStyle(
                                     fontSize: 11,
                                     fontStyle: FontStyle.italic,
-                                    color: QColors.primary),
+                                    color: context.isDarkMode
+                                        ? QColors.light
+                                        : QColors.dark),
                               ),
                             ],
                           ),

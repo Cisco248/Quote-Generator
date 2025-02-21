@@ -62,8 +62,8 @@ class AddUserState extends State<AddUser> {
                       hintText: 'Text Quote',
                       hintStyle: TextStyle(
                           color: context.isDarkMode
-                              ? QColors.dark
-                              : QColors.light),
+                              ? QColors.light
+                              : QColors.dark),
                     ),
                   ),
                 ),
@@ -81,15 +81,14 @@ class AddUserState extends State<AddUser> {
                         hintText: 'Author',
                         hintStyle: TextStyle(
                           color:
-                              context.isDarkMode ? QColors.dark : QColors.light,
+                              context.isDarkMode ? QColors.light : QColors.dark,
                         )),
                   ),
                 ),
                 const SizedBox(height: 50),
                 ElevatedButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStatePropertyAll(QColors.buttonBorder),
+                      backgroundColor: WidgetStatePropertyAll(QColors.primary),
                       shadowColor: WidgetStateProperty.all(Colors.transparent),
                       fixedSize: WidgetStateProperty.all(Size(100, 40))),
                   onPressed: addUser,
